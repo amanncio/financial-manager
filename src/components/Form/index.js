@@ -37,7 +37,7 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
             <C.Container>
                 <C.InputContent>
                     <C.Label>Descrição</C.Label>
-                    <C.Input value={desc} onChange={(e) => setDesc(e.target.value)} />
+                    <C.Input value={desc} onChange={(e) => setDesc(e.target.value)} placeholder={"Descrição"} />
                 </C.InputContent>
 
                 <C.InputContent>
@@ -46,6 +46,7 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
                         value={amount}
                         type="number"
                         onChange={(e) => setAmount(e.target.value)}
+                        placeholder={"R$ 0.00"}
                     />
                 </C.InputContent>
                 <C.RadioGroup>
@@ -61,6 +62,7 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
                         type="radio"
                         id="rExpenses"
                         name="group1"
+                        onChange={() => setExpense(!isExpense)}
                     />
                     <C.Label htmlFor="rExpenses">Saída</C.Label>
                 </C.RadioGroup>
